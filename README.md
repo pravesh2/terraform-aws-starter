@@ -19,14 +19,14 @@ Infrastructure modularity
 
 Cloud automation best practices
 
-📁 Project Structure
+ Project Structure
 terraform-aws-starter/
 │── main.tf
 │── variables.tf
 │── outputs.tf
 │── README.md
 
-🧠 Architecture Diagram
+ Architecture Diagram
  ┌────────────────────┐
  │   Terraform CLI     │
  └─────────┬───────────┘
@@ -39,12 +39,12 @@ terraform-aws-starter/
  │     S3 Bucket        │
  └──────────────────────┘
 
-⚙️ Usage
-1️⃣ Initialize Terraform
+ Usage
+1. Initialize Terraform
 terraform init
 
-2️⃣ Validate
+2. Validate
 terraform validate
 
-3️⃣ Apply Infrastructure
+3. Apply Infrastructure
 terraform apply
