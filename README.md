@@ -1,50 +1,81 @@
 Terraform AWS Starter Template
 
+A simple, production-ready Terraform starter template for deploying AWS infrastructure using Infrastructure-as-Code (IaC).
 
 
 
 
 
-A minimal Infrastructure-as-Code starter built using Terraform to deploy AWS resources.
 
-This project demonstrates:
+🚀 Overview
 
-AWS provider setup
+This repository provides a clean, minimal Terraform project to provision AWS resources.
+It is ideal for:
 
-S3 bucket provisioning
+Cloud beginners
 
-Variables + Outputs
+DevOps engineers
 
-Infrastructure modularity
+Technical interviews
 
-Cloud automation best practices
+Real AWS deployments
 
- Project Structure
+Expanding into larger IaC modules
+
+📂 Project Structure
 terraform-aws-starter/
-│── main.tf
-│── variables.tf
-│── outputs.tf
-│── README.md
+│
+├── main.tf           # AWS provider + resource definitions
+├── variables.tf      # Input variable declarations
+├── outputs.tf        # Output values
+├── terraform.tfvars  # Example variable values (optional)
+└── README.md
 
- Architecture Diagram
- ┌────────────────────┐
- │   Terraform CLI     │
- └─────────┬───────────┘
-           │ applies config
- ┌─────────▼───────────┐
- │   AWS Provider       │
- └─────────┬───────────┘
-           │ creates
- ┌─────────▼───────────┐
- │     S3 Bucket        │
- └──────────────────────┘
+🧰 Prerequisites
 
- Usage
-1. Initialize Terraform
+Terraform installed → https://developer.hashicorp.com/terraform
+
+AWS CLI installed
+
+Configure credentials:
+
+aws configure
+
+⚙️ Deployment Steps
+1. Clone the repository
+git clone https://github.com/pravesh2/terraform-aws-starter
+cd terraform-aws-starter
+
+2. Initialize Terraform
 terraform init
 
-2. Validate
-terraform validate
+3. Preview infrastructure
+terraform plan
 
-3. Apply Infrastructure
+4. Apply changes
 terraform apply
+
+
+Type yes when prompted.
+
+🧹 Destroy Resources
+terraform destroy
+
+📘 Example Output
+bucket_name = "my-terraform-bucket-2025"
+bucket_arn = "arn:aws:s3:::my-terraform-bucket-2025"
+
+🏗 Architecture Diagram
+ +-------------+         terraform apply        +------------------+
+ |  Terraform  | -----------------------------> |   AWS Provider   |
+ +-------------+                                +------------------+
+        |                                                  |
+        |  provisions resources (S3, IAM, VPC, etc.)       |
+        v                                                  v
+ +------------------+                         +-------------------------+
+ |     main.tf      | ----> create ---->      |  AWS Resources (S3)     |
+ +------------------+                         +-------------------------+
+
+📜 License
+
+MIT License
